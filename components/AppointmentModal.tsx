@@ -9,26 +9,26 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
-import { Button } from "./ui/button";
 import { AppointmentForm } from "./forms/AppointmentForm";
 import { Appointment } from "@/types/appwrite.types";
+import { Button } from "./ui/button";
 
 const AppointmentModal = ({
-  type,
   patientId,
   userId,
   appointment,
+  type,
 }: {
-  type: "schedule" | "cancel";
   patientId: string;
   userId: string;
   appointment?: Appointment;
+  type: "schedule" | "cancel";
 }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button
           variant="ghost"
           className={`capitalize ${type === "schedule" && "text-green-500"}`}
