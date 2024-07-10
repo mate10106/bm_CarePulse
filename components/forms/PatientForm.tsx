@@ -24,15 +24,15 @@ const PatientForm = () => {
     },
   });
 
-  async function onSubmit({
-    name,
-    email,
-    phone,
-  }: z.infer<typeof UserFormValidation>) {
+  async function onSubmit(values: z.infer<typeof UserFormValidation>) {
     setIsLoading(true);
 
     try {
-      const userData = { name, email, phone };
+      const userData = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+      };
       const user = await createUser(userData);
 
       if (user) {
