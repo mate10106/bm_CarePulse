@@ -1,4 +1,4 @@
-# BMChat: A Next.js Chat Application
+# CarePulse: Healthcare platform
 
 ## Project Description
 
